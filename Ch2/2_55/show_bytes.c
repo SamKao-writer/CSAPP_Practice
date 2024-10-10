@@ -2,21 +2,10 @@
 
 void show_bytes(unsigned char *start, size_t len);
 
-#define DECLARE_SHOW_BYTES(type)                        \
-    static inline void show_##type(type x)              \
-    {                                                   \
-        show_bytes((unsigned char *) &x, sizeof(type)); \
-    }
-
-DECLARE_SHOW_BYTES(int);
-DECLARE_SHOW_BYTES(double);
-
 int main(int argc, char *argv[])
 {
     int a = 0xFF;
-    double b = 16;
-    show_int(a);
-    show_double(b);
+    show_bytes((unsigned char *) &a, sizeof(int));
     return 0;
 }
 
