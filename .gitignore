@@ -1,6 +1,10 @@
+# all binary files
 *.out
 *.o
 *.so
 *.dll
 *.a
 *.dylib
+
+# igonore .vscode directory
+.vscode/ 
