@@ -2,6 +2,7 @@
 
 #define SET_BIT(x, pos) (x |= (1 << pos))
 #define CLR_BIT(x, pos) (x &= ~(1 << pos))
+#define TOG_BIT(x, pos) (x ^= (1 << pos))
 #define GET_BIT(x, pos) (!!(x & (1 << pos)))
 
 #define PRINT(type, a)                                       \
@@ -23,6 +24,10 @@ int main(int argc, char *argv[])
 
     // Clear a bit and print
     CLR_BIT(a, pos + 2);
+    PRINT(unsigned char, a);
+
+    // Toggle a bit and print
+    TOG_BIT(a, pos);
     PRINT(unsigned char, a);
 
     return 0;
