@@ -3,7 +3,7 @@
 
 #define MASK 0xFF
 #define OFFSET ((sizeof(int) - sizeof(char)) << 3)
-#define EXP(x) ((x >> OFFSET) | (~MASK))
+#define EXP(x) (((x) >> (OFFSET)) | (~MASK))
 
 #define A(x) (!!(x))
 #define B(x) (!!(~x))
