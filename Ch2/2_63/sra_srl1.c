@@ -46,7 +46,7 @@ int sra1(int x, int k)
     /* Change the mask */
     mask &= sign_bit_mask - 1;
 
-    return xsrl ^ mask;
+    return xsrl | mask;
 }
 
 int sra0(int x, int k)
