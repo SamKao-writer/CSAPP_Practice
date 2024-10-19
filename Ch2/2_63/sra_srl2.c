@@ -68,16 +68,23 @@ int sra2(int x, int k)
     return xsrl - M;
 }
 
-
 int main(int argc, char *argv[])
 {
+    /* Check function srl2 is equal to srl1 or not */
     for (unsigned i = 0; i < UINT_MAX; ++i)
-        assert(srl1(i, 4) == srl2(i, 4));
-    assert(srl1(UINT_MAX, 4) == srl2(UINT_MAX, 4));
+        for (unsigned k = 0; k < 32; ++k)
+            assert(srl1(i, k) == srl2(i, k));
 
-    for (int i = INT_MIN; i < INT_MAX; i++)
-        assert(sra1(i, 4) == sra2(i, 4));
-    assert(sra1(INT_MAX, 4) == sra2(INT_MAX, 4));
+    for (unsigned k = 0; k < 32; ++k)
+        assert(srl1(UINT_MAX, k) == srl2(UINT_MAX, k));
+
+    /* Check function sra2 is equal to sra1 or not */
+    for (int i = INT_MIN; i < INT_MAX; ++i)
+        for (int k = 0; k < 32; ++k)
+            assert(sra1(i, k) == sra2(i, k));
+
+    for (int k = 0; k < 32; ++k)
+        assert(sra1(INT_MAX, k) == sra2(INT_MAX, k));
 
     return 0;
 }
