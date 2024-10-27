@@ -4,7 +4,7 @@
 int fit_bits(int x, int n)
 {
     int pos = !(x >> (n - 1));
-    int neg = (x >> (n-1)) == -1;
+    int neg = (x >> (n - 1)) == -1;
     return pos || neg;
 }
 
