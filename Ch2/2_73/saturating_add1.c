@@ -53,6 +53,9 @@ int main(int argc, char *argv[])
 
     for (int32_t j = INT32_MIN; j < INT32_MAX; ++j)
         assert(saturating_add_32(INT32_MAX, j) == saturating_add(INT32_MAX, j));
+    
+    for (int32_t i = INT32_MIN; i < INT32_MAX; ++i)
+        assert(saturating_add_32(i, INT32_MAX) == saturating_add(i, INT32_MAX));
 
     return 0;
 }
