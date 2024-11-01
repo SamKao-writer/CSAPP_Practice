@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 {
     for (int i = INT_MIN; i < INT_MAX; ++i)
         assert(mul3div4(i) == i * 3 / 4);
+    
+    assert(mul3div4(INT_MAX) == INT_MAX * 3 / 4);
 
     return 0;
 }
